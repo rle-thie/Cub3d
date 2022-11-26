@@ -5,3 +5,6 @@ Shooter" dans l’histoire du jeu-vidéo.
 Wolfenstein 3D est l’ancêtre des jeux tels que Doom (Id Software, 1993), Doom II
 (Id Software, 1994), Duke Nukem 3D (3D Realm, 1996) et Quake (Id Software, 1996),
 qui sont des pierres angulaires additionnelles dans le monde du jeu vidéo.
+
+install de la minilix
+sudo apt-get update && sudo apt-get install xorg libxext-dev zlib1g-dev libbsd-dev
