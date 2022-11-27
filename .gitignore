@@ -1,5 +1,9 @@
 # Prerequisites
 *.d
+/test
+/objs
+/.vscode
+cub3D
 
 # Object files
 *.o
