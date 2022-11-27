@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:38:45 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/27 00:50:50 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/11/27 19:16:20 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,26 @@
 
 typedef struct s_data			t_data;
 typedef struct s_garbage		t_garbage;
+typedef struct s_mlx			t_mlx;
 
 struct	s_data
 { 
 	t_garbage	*garb;
 	char		*filename;
+	t_mlx		*mlx;
+	int			width;
+	int			height
+};
+
+struct s_mlx
+{
+	int		bpp;
+	int		line_length;
+	int		endian;
+	int		*addr;
+	void	*ptr;
+	void	*win;
+	void	*img;
 };
 
 struct	s_garbage

@@ -6,15 +6,17 @@
 #    By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 22:32:51 by rle-thie          #+#    #+#              #
-#    Updated: 2022/11/27 01:02:33 by rle-thie         ###   ########.fr        #
+#    Updated: 2022/11/27 19:32:02 by rle-thie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ${SRCS_MAIN} ${SRCS_INITS} ${SRCS_LIBFT}
+SRCS = ${SRCS_MAIN} ${SRCS_INITS} ${SRCS_LIBFT} ${SRCS_GAME}
 
 SRCS_MAIN = $(addprefix srcs/, main.c)
 
 SRCS_INITS = $(addprefix srcs/init/, init.c gc.c gc_utils.c)
+
+SRCS_GAME = $(addprefix srcs/game/, ray_casting.c)
 
 SRCS_LIBFT = $(addprefix srcs/libft/, ft_putstr_fd.c ft_bzero.c ft_strdup.c ft_strlen.c)
 

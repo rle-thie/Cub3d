@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:43:15 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/27 01:14:54 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/11/27 19:18:38 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ t_data	*init_data(void)
 		exit(EXIT_FAILURE);
 	}
 	data->garb->ptr = NULL;
-	data->filename = NULL;
+	// data->filename = NULL;
+	data->mlx = ft_calloc(sizeof(t_mlx), data);
 	return (data);
 }
 
@@ -39,6 +40,8 @@ t_data	*init(char *filename)
 	t_data *data;
 
 	data = init_data();
+	data->height = 900;
+	data->width = 1200;
 	data->filename = ft_strdup(filename, data);
 	printf("%s\n", data->filename);
 	return (data);

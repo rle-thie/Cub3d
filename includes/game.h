@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   game.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/24 22:38:07 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/27 19:25:57 by rle-thie         ###   ########.fr       */
+/*   Created: 2022/11/27 19:25:17 by rle-thie          #+#    #+#             */
+/*   Updated: 2022/11/27 19:26:01 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef GAME_H
+# define GAME_H
 
-void	ft_bzero(void *s, size_t n);
-void	ft_putstr_fd(char *s, int fd);
-int		ft_strlen(char *str);
-char	*ft_strdup(const char *s, t_data *data);
+void	ray_casting(t_data *data);
 
 #endif
