@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:38:45 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/27 19:16:20 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/11/28 14:46:08 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ struct	s_data
 	char		*filename;
 	t_mlx		*mlx;
 	int			width;
-	int			height
+	int			height;
 };
 
 struct s_mlx

@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:58:41 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/27 19:24:32 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/11/28 16:19:24 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	init_game(t_data *data)
 		ft_free_exit("Can't init mlx window", 1, data);
 	data->mlx->img = mlx_new_image(data->mlx->ptr, data->width, data->height);
 	if (!data->mlx->img)
-		ft_free_exitft_free_exit("Can't init mlx image", 1, data);
+		ft_free_exit("Can't init mlx image", 1, data);
 	data->mlx->addr = (int *)mlx_get_data_addr(data->mlx->img, &data->mlx->bpp, \
 		&data->mlx->line_length, &data->mlx->endian);
 	if (!data->mlx->addr)
@@ -32,5 +32,6 @@ void	init_game(t_data *data)
 
 void	ray_casting(t_data *data)
 {
-	init_game(data);
+	// init_game(data);
+	data=data;
 }
