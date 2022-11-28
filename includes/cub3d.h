@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:36:16 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/28 14:45:10 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/11/28 18:43:37 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@
 #include "utils.h"
 #include "game.h"
 # include "../mlx/mlx.h"
-# include "../mlx/mlx_int.h"
+// # include "../mlx/mlx_int.h"
 
 #endif

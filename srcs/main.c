@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:31:42 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/28 14:50:27 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/11/28 18:59:21 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ int	main(int ac, char **av, char **env)
 		return (0);
 	data = init(av[1]);
 	data = data;
-	// parsing
+	// if (!parsing())
+		// ft_free_exit("Error\nParsing error", 1, data)
 	ray_casting(data);
 	free_all(data);
 	return (0);

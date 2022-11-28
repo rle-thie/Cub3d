@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:58:41 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/28 16:19:24 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/11/28 22:08:45 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,78 @@ void	init_game(t_data *data)
 	// get_textures()
 }
 
+int	key_event(int key_pressed, t_data *data)
+{
+	if (key_pressed == 119)
+		data->key->key_w = 1;
+	if (key_pressed == 115)
+		data->key->key_s = 1;
+	if (key_pressed == 97)
+		data->key->key_a = 1;
+	if (key_pressed == 100)
+		data->key->key_d = 1;
+	if (key_pressed == 65363)
+		data->key->key_lr = 1;
+	if (key_pressed == 65361)
+		data->key->key_la = 1;
+	// if (key_pressed == 65307)
+	// 	ft_exit_esc(data);
+	return (0);
+}
+
+void	update_position(t_data *data)
+{
+	if (data->key->key_w == 1)
+		move_forward(data);
+	if (data->key->key_s == 1)
+		move_backward(data);
+	if (data->key->key_a == 1)
+		move_left(data);
+	if (data->key->key_d == 1)
+		move_right(data);
+	if (data->key->key_la == 1)
+		rotate_left(data);
+	if (data->key->key_lr == 1)
+		rotate_right(data);
+}
+
+void	render_ray(t_data *data)
+{
+	int	x;
+
+	x = 0;
+	while (x < data->width)
+	{
+		// ray_dir(data, x);
+		// calc_steps(data);
+		// ray_hit_wall_pos(data);
+		// calc_line_height(data);
+		// draw_ceiling(data, x);
+		// get_color(data);
+		// draw_texture(data, x);
+		// draw_floor(data, x);
+		x++;
+	}
+}
+
+int	calcul_image(t_data *data)
+{
+	update_position(data);
+	if (data->player->change)
+	{
+		render_ray(data);
+		mlx_put_image_to_window(data->mlx->ptr, data->mlx->win, data->mlx->img, 0, 0);
+	}
+	data->player->change = 0;
+	return (0);
+}
+
 void	ray_casting(t_data *data)
 {
-	// init_game(data);
-	data=data;
+	init_game(data);
+	mlx_hook(data->mlx->win, 2, 1, &key_event, data);
+	mlx_loop_hook(data->mlx->ptr, &calcul_image, data);
+
+	mlx_loop(data->mlx->ptr);
+	// data=data;
 }

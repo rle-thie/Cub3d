@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:49:28 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/28 14:48:50 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/11/28 18:52:46 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,13 @@ void	remove_garb(void *ptr, t_data *data)
 	free(tmp);
 	while (data->garb && data->garb->prev)
 		data->garb = data->garb->prev;
+}
+
+void	free_all(t_data *data)
+{
+	// close(data->in_fd);
+	ft_free_garb(data->garb);
+	free(data);
 }
 
 void	ft_free(void *ptr, t_data *data)

@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:38:45 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/28 14:46:08 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/11/28 21:16:19 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 typedef struct s_data			t_data;
 typedef struct s_garbage		t_garbage;
 typedef struct s_mlx			t_mlx;
+typedef	struct s_key			t_key;
+typedef struct s_player			t_player;
 
 struct	s_data
 { 
@@ -24,6 +26,34 @@ struct	s_data
 	t_mlx		*mlx;
 	int			width;
 	int			height;
+	t_key		*key;
+	t_player	*player;
+	float		move_speed;
+	float		rotate_speed;
+};
+
+struct s_key
+{
+	int	key_w;
+	int	key_s;
+	int	key_a;
+	int	key_d;
+	int	key_lr;
+	int	key_la;
+};
+
+struct s_player
+{
+	int		change;
+	char	dir;
+	float	x;
+	float	y;
+	float	old_x;
+	float	old_y;
+	float	dir_x;
+	float	dir_y;
+	float	old_dx;
+	float	old_dy;
 };
 
 struct s_mlx

@@ -16,7 +16,7 @@ void		ft_free(void *ptr, t_data *data);
 void		free_all(t_data *data);
 
 // error
-int	ft_free_exit(char *msg, int value, t_data *data)
 void	ft_exit_message(char *msg, t_data *data, int value);
+int		ft_free_exit(char *msg, int value, t_data *data);
 
 #endif
