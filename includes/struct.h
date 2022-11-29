@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:38:45 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/28 21:16:19 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/11/29 09:43:17 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ typedef struct s_garbage		t_garbage;
 typedef struct s_mlx			t_mlx;
 typedef	struct s_key			t_key;
 typedef struct s_player			t_player;
+typedef struct s_raytracing		t_raytracing;
 
 struct	s_data
 { 
@@ -30,6 +31,7 @@ struct	s_data
 	t_player	*player;
 	float		move_speed;
 	float		rotate_speed;
+	t_raytracing	*raytracing;
 };
 
 struct s_key
@@ -65,6 +67,35 @@ struct s_mlx
 	void	*ptr;
 	void	*win;
 	void	*img;
+};
+
+struct s_raytracing
+{
+	float	pwd;
+	float	ddy;
+	float	ddx;
+	float	sdy;
+	float	sdx;
+	float	step;
+	float	dir_x;
+	float	dir_y;
+	float	wall_x;
+	float	text_pos;
+	float	plane_x;
+	float	plane_y;
+	float	camera_x;
+	int		hit;
+	int		side;
+	int		map_x;
+	int		map_y;
+	int		step_x;
+	int		step_y;
+	int		line_h;
+	int		text_x;
+	int		text_y;
+	int		text_num;
+	int		draw_end;
+	int		draw_start;
 };
 
 struct	s_garbage

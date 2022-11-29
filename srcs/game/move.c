@@ -6,11 +6,11 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 21:20:02 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/28 21:32:34 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/11/29 09:21:13 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../includes/cub3d.h"
+#include "../../includes/cub3d.h"
 
 void	move_forward(t_data *data)
 {
