@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:38:45 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/29 09:43:17 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/01 19:39:29 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ struct	s_data
 	float		move_speed;
 	float		rotate_speed;
 	t_raytracing	*raytracing;
+	char			**map;
 };
 
 struct s_key

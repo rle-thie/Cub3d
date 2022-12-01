@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:58:41 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/29 09:17:41 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/01 19:40:13 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ void	render_ray(t_data *data)
 	while (x < data->width)
 	{
 		ray_dir(data, x);
-		// calc_steps(data);
-		// ray_hit_wall_pos(data);
+		render_steps(data);
+		wall_pos(data);
 		// calc_line_height(data);
 		// draw_ceiling(data, x);
 		// get_color(data);
