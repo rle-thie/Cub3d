@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:38:45 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/01 19:39:29 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/02 22:16:44 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,36 @@ typedef struct s_mlx			t_mlx;
 typedef	struct s_key			t_key;
 typedef struct s_player			t_player;
 typedef struct s_raytracing		t_raytracing;
+typedef struct s_texture		t_texture;
 
 struct	s_data
-{ 
+{
+	t_texture	*texture;
 	t_garbage	*garb;
 	char		*filename;
 	t_mlx		*mlx;
 	int			width;
 	int			height;
+	int			c_color;
+	int			f_color;
 	t_key		*key;
 	t_player	*player;
 	float		move_speed;
 	float		rotate_speed;
 	t_raytracing	*raytracing;
 	char			**map;
+};
+
+struct	s_texture
+{
+	int		h;
+	int		w;
+	int		bpp;
+	int		endian;
+	int		line_length;
+	int		*addr;
+	void	*img;
+	char	*path;
 };
 
 struct s_key

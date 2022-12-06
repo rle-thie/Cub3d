@@ -6,11 +6,11 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:58:41 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/01 19:40:13 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/02 22:16:00 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../includes/cub3d.h"
+#include "../../includes/cub3d.h"
 
 void	init_game(t_data *data)
 {
@@ -75,11 +75,11 @@ void	render_ray(t_data *data)
 		ray_dir(data, x);
 		render_steps(data);
 		wall_pos(data);
-		// calc_line_height(data);
-		// draw_ceiling(data, x);
-		// get_color(data);
-		// draw_texture(data, x);
-		// draw_floor(data, x);
+		render_height_screen(data);
+		put_ceiling(data, x);
+		calc_color(data);
+		draw_texture(data, x);
+		put_floor(data, x);
 		x++;
 	}
 }

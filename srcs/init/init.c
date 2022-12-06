@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:43:15 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/29 09:40:55 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/02 22:16:59 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ t_data	*init_data(void)
 	data->mlx = ft_calloc(sizeof(t_mlx), data);
 	data->key = ft_calloc(sizeof(t_key), data);
 	data->raytracing = ft_calloc(sizeof(t_raytracing), data);
+	data->texture = ft_calloc(sizeof(t_texture), data);
 	return (data);
 }
 
@@ -107,6 +108,17 @@ void	init_raytracing(t_data *data)
 	init_raytracing_utils(data);
 }
 
+void	init_texture(t_data *data)
+{
+	data->texture->h = 0;
+	data->texture->w = 0;
+	data->texture->bpp = 0;
+	data->texture->endian = 0;
+	data->texture->line_length = 0;
+	data->texture->addr = NULL;
+	data->texture->img = NULL;
+	data->texture->path = NULL;
+}
 
 void	initialise_struct(t_data *data)
 {
@@ -114,6 +126,7 @@ void	initialise_struct(t_data *data)
 	init_key(data);
 	init_player(data);
 	init_raytracing(data);
+	init_texture(data);
 }
 
 t_data	*init(char *filename)
@@ -126,6 +139,8 @@ t_data	*init(char *filename)
 	data->width = 1200;
 	data->move_speed = 0.06;
 	data->rotate_speed = 0.06;
+	data->c_color = 0;
+	data->f_color = 0;
 	data->filename = ft_strdup(filename, data);
 	printf("%s\n", data->filename);
 	return (data);
