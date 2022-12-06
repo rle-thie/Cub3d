@@ -7,4 +7,4 @@ Wolfenstein 3D est l’ancêtre des jeux tels que Doom (Id Software, 1993), Doom
 qui sont des pierres angulaires additionnelles dans le monde du jeu vidéo.
 
 install de la minilix
-sudo apt-get update && sudo apt-get install xorg libxext-dev zlib1g-dev libbsd-dev
+# sudo apt-get update && sudo apt-get install xorg libxext-dev zlib1g-dev libbsd-dev
