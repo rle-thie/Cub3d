@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:43:15 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/07 11:23:38 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/07 12:13:28 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,6 @@ t_data	*init(char *filename)
 	data->c_color = 0;
 	data->f_color = 0;
 	data->filename = ft_strdup(filename, data);
-	printf("%s\n", data->filename);
+	// printf("%s\n", data->filename);
 	return (data);
 }

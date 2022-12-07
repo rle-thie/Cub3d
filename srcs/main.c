@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:31:42 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/07 12:05:00 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/07 12:18:05 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,11 @@ int	main(int ac, char **av, char **env)
 	av = av;
 	env = env;
 	if (ac != 2)
+	{
+		ft_putstr_fd("Error\nWrong number of argument.\n", 2);
 		return (0);
+	}
 	data = init(av[1]);
-	data = data;
 	// if (!parsing())
 		// ft_free_exit("Error\nParsing error", 1, data)
 	// ray_casting(data);
