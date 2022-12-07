@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 19:25:17 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/07 10:18:05 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:48:35 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,8 @@ void	move_right(t_data *data);
 void	move_left(t_data *data);
 void	rotate_right(t_data *data);
 void	rotate_left(t_data *data);
+
+// exit fonction
+int	ft_exit_esc(t_data *data);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:43:15 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/02 22:16:59 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:23:38 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ t_data	*init_data(void)
 	data->mlx = ft_calloc(sizeof(t_mlx), data);
 	data->key = ft_calloc(sizeof(t_key), data);
 	data->raytracing = ft_calloc(sizeof(t_raytracing), data);
-	data->texture = ft_calloc(sizeof(t_texture), data);
+	data->texture = ft_malloc(sizeof(t_texture) * 4, data);
+	data->player = ft_calloc(sizeof(t_player), data);
 	return (data);
 }
 
@@ -110,14 +111,21 @@ void	init_raytracing(t_data *data)
 
 void	init_texture(t_data *data)
 {
-	data->texture->h = 0;
-	data->texture->w = 0;
-	data->texture->bpp = 0;
-	data->texture->endian = 0;
-	data->texture->line_length = 0;
-	data->texture->addr = NULL;
-	data->texture->img = NULL;
-	data->texture->path = NULL;
+	int i;
+
+	i = 0;
+	while (i < 4)
+	{
+		data->texture[i].h = 0;
+		data->texture[i].w = 0;
+		data->texture[i].bpp = 0;
+		data->texture[i].endian = 0;
+		data->texture[i].line_length = 0;
+		data->texture[i].addr = NULL;
+		data->texture[i].img = NULL;
+		data->texture[i].path = NULL;
+		i++;
+	}
 }
 
 void	initialise_struct(t_data *data)

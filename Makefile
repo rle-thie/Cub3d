@@ -6,7 +6,7 @@
 #    By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 22:32:51 by rle-thie          #+#    #+#              #
-#    Updated: 2022/12/07 10:30:55 by rle-thie         ###   ########.fr        #
+#    Updated: 2022/12/07 11:13:43 by rle-thie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-RM = rm -f
+RM = rm -fr
 
 all: ${NAME}
 
@@ -43,13 +43,14 @@ ${OBJDIR}/%.o:%.c
 
 clean:
 	${RM} ${OBJS}
+	${RM} ${OBJDIR}
 
 fclean: clean
 	${RM} ${NAME}
 
 re: fclean all
 
-v: rc
+v: re
 	valgrind ./${NAME} maps/caca.cub
 
 rc: fclean all

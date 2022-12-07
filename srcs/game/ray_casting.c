@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:58:41 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/02 22:16:00 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:55:01 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,25 @@ int	key_event(int key_pressed, t_data *data)
 		data->key->key_lr = 1;
 	if (key_pressed == 65361)
 		data->key->key_la = 1;
-	// if (key_pressed == 65307)
-	// 	ft_exit_esc(data);
+	if (key_pressed == 65307)
+		ft_exit_esc(data);
+	return (0);
+}
+
+int	restore_key(int key_pressed, t_data *data)
+{
+	if (key_pressed == 119)
+		data->key->key_w = 0;
+	if (key_pressed == 115)
+		data->key->key_s = 0;
+	if (key_pressed == 97)
+		data->key->key_a = 0;
+	if (key_pressed == 100)
+		data->key->key_d = 0;
+	if (key_pressed == 65363)
+		data->key->key_lr = 0;
+	if (key_pressed == 65361)
+		data->key->key_la = 0;
 	return (0);
 }
 
@@ -64,6 +81,8 @@ void	update_position(t_data *data)
 	if (data->key->key_lr == 1)
 		rotate_right(data);
 }
+
+
 
 void	render_ray(t_data *data)
 {
@@ -101,7 +120,9 @@ void	ray_casting(t_data *data)
 	init_game(data);
 	mlx_hook(data->mlx->win, 2, 1, &key_event, data);
 	mlx_loop_hook(data->mlx->ptr, &calcul_image, data);
-
+	mlx_hook(data->mlx->win, 17, 17, &ft_exit_esc, data);
+	mlx_hook(data->mlx->win, 3, 10, &restore_key, data);
+	
 	mlx_loop(data->mlx->ptr);
 	// data=data;
 }
