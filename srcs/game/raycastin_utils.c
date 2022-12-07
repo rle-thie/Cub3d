@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 09:19:02 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/01 23:13:09 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/07 10:19:01 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ray_dir(t_data *data, int x)
 	data->raytracing->map_y = (int)data->player->y;
 }
 
-float	delta_ddx(t_data *data, float dir_x, float dir_y)
+float	delta_ddx(float dir_x, float dir_y)
 {
 	float	ddx;
 	
@@ -35,7 +35,7 @@ float	delta_ddx(t_data *data, float dir_x, float dir_y)
 	return (ddx);
 }
 
-float	delta_ddy(t_data *data, float dir_x, float dir_y)
+float	delta_ddy(float dir_x, float dir_y)
 {
 	float	ddy;
 	
@@ -51,8 +51,8 @@ float	delta_ddy(t_data *data, float dir_x, float dir_y)
 
 void	find_delta(t_data *data)
 {
-	data->raytracing->ddx = delta_ddx(data, data->raytracing->dir_x, data->raytracing->dir_y);
-	data->raytracing->ddy = dalta_ddy(data, data->raytracing->dir_x, data->raytracing->dir_y);	
+	data->raytracing->ddx = delta_ddx(data->raytracing->dir_x, data->raytracing->dir_y);
+	data->raytracing->ddy = delta_ddy(data->raytracing->dir_x, data->raytracing->dir_y);	
 }
 
 void	render_steps(t_data *data)
