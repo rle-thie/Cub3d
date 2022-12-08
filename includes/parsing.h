@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/24 22:36:16 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/08 14:50:34 by ldevy            ###   ########.fr       */
+/*   Created: 2022/12/08 14:43:37 by ldevy             #+#    #+#             */
+/*   Updated: 2022/12/08 14:49:52 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef PARSING_H
+# define PARSING_H
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <math.h>
 
-# include "struct.h"
-# include "libft.h"
-# include "utils.h"
-# include "game.h"
-# include "../mlx/mlx.h"
-# include "parsing.h"
-// # include "../mlx/mlx_int.h"
+
+//gnl
+char		*free_ptr(char *tab);
+static char	*ft_strtrim_front(char *str);
+static char	*read_buff(int fd, char *stat, int buffer_size);
+char		*read_line(char *str);
+char		*get_next_line(int fd);
 
 #endif
