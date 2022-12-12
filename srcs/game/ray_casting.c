@@ -6,11 +6,28 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:58:41 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/07 11:55:01 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/12 20:11:29 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
+
+void	mlx_init_textures(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	while (i <= 3)
+	{
+		data->texture[i].img = mlx_xpm_file_to_image(data->mlx->ptr, data->texture[i].path, &data->texture[i].w, &data->texture[i].h);
+		if (!data->texture[i].img)
+			ft_free_exit("XPM image reading has failed", 1, data);
+		data->texture[i].addr = (int *)mlx_get_data_addr(data->texture[i].img, &data->texture[i].bpp, &data->texture[i].line_length, &data->texture[i].endian);
+		if (!data->texture[i].addr)
+			ft_free_exit("XPM address reading has failed", 1, data);
+		i++;
+	}
+}
 
 void	init_game(t_data *data)
 {
@@ -27,7 +44,7 @@ void	init_game(t_data *data)
 		&data->mlx->line_length, &data->mlx->endian);
 	if (!data->mlx->addr)
 		ft_free_exit("Can't init mlx addr", 1, data);
-	// get_textures()
+	mlx_init_textures(data);
 }
 
 int	key_event(int key_pressed, t_data *data)
