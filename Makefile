@@ -6,7 +6,7 @@
 #    By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 22:32:51 by rle-thie          #+#    #+#              #
-#    Updated: 2022/12/12 23:44:02 by ldevy            ###   ########.fr        #
+#    Updated: 2022/12/13 22:20:40 by ldevy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,14 @@ SRCS_MAIN = $(addprefix srcs/, main.c)
 
 SRCS_GNL = $(addprefix srcs/gnl/, ft_get_next_line.c)
 
-SRCS_PARSING = $(addprefix srcs/parsing/, parsing_one.c utils.c)
+SRCS_PARSING = $(addprefix srcs/parsing/, parsing_one.c utils.c map_parsing.c map_validation.c)
 
 SRCS_INITS = $(addprefix srcs/init/, init.c gc.c gc_utils.c)
 
 SRCS_GAME = $(addprefix srcs/game/, ray_casting.c raycastin_utils.c draw.c move.c)
 
 SRCS_LIBFT = $(addprefix srcs/libft/, ft_putstr_fd.c ft_bzero.c ft_strdup.c ft_strlen.c convert_trgb.c\
-				ft_strjoin_gc.c ft_strchr.c ft_strncmp.c ft_split.c ft_strtrim.c ft_atoi.c)
+				ft_strjoin_gc.c ft_strchr.c ft_strncmp.c ft_split.c ft_strtrim.c ft_atoi.c ft_strlcpy.c)
 
 OBJDIR = objs
 

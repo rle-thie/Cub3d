@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:45:46 by ldevy             #+#    #+#             */
-/*   Updated: 2022/12/12 22:35:49 by ldevy            ###   ########.fr       */
+/*   Updated: 2022/12/13 14:31:47by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,24 +35,32 @@ int	parsing(t_data *data)
 	if (file == -1)
 		err_handling(data, file, 0);
 	line = "";
+	data->map = NULL;
 	while (line)
 	{
 		line = get_next_line(file, data);
-		fcking_switch(line, data);
+		if (!is_data_full(data))
+			data_mode(line, data);
+		else
+		{
+			map_mode(line, data, file);
+			break ;
+		}
 	}
 	close(file);
+	last_check(data);
 	return (1);
 }
 
 int	is_valid_id(char *id)
 {
-	if (!ft_strncmp(id, "NO", 2))
+	if (!ft_strncmp(id, "NO", 3))
 		return (1);
-	if (!ft_strncmp(id, "SO", 2))
+	if (!ft_strncmp(id, "SO", 3))
 		return (2);
-	if (!ft_strncmp(id, "WE", 2))
+	if (!ft_strncmp(id, "WE", 3))
 		return (3);
-	if (!ft_strncmp(id, "EA", 2))
+	if (!ft_strncmp(id, "EA", 3))
 		return (4);
 	if (ft_strlen(id) == 1 && id[0] == 'F')
 		return (5);
@@ -61,7 +69,7 @@ int	is_valid_id(char *id)
 	return (0);
 }
 
-void	fcking_switch(char *line, t_data *data)
+void	data_mode(char *line, t_data *data)
 {
 	char	**line_split;
 
@@ -84,7 +92,7 @@ void	data_fill(t_data *data, char **line, int index)
 		err_handling(data, 0, 2);
 	}
 	txt_path = ft_strdup(line[1], data);
-	ft_strtrim(txt_path, "\n", data);
+	txt_path = ft_strtrim(txt_path, "\n", data);
 	if (index < 5)
 		data->texture[index - 1].path = txt_path;
 	else

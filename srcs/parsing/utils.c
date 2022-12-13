@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 20:20:17 by ldevy             #+#    #+#             */
-/*   Updated: 2022/12/12 23:40:59 by ldevy            ###   ########.fr       */
+/*   Updated: 2022/12/13 19:29:27 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ void	err_handling(t_data *data, int file, int mode)
 			printf("cub3d : Bad file extension\n");
 		if (mode == 2)
 			printf("cub3d : Bad format in file\n");
+		if (mode == 3)
+		{
+			printf("cub3d : Bad MAP format in file\n");
+			close(file);
+		}
 		free_all(data);
 		exit(EXIT_FAILURE);
 	}
@@ -29,7 +34,6 @@ void	err_handling(t_data *data, int file, int mode)
 	free_all(data);
 	exit(EXIT_FAILURE);
 }
-
 
 void	free_split(char **ptr)
 {
@@ -50,7 +54,6 @@ void	convert_to_rgb(t_data *data, char **line, int index)
 	char	**nbrs;
 	int		val;
 
-	(void)index;
 	if (!line[1])
 	{
 		free_split(line);
@@ -63,8 +66,8 @@ void	convert_to_rgb(t_data *data, char **line, int index)
 		err_handling(data, 0, 2);
 	if (index == 5)
 		data->f_color = val;
-	else if (index == 6)
-		data->f_color = val;
+	if (index == 6)
+		data->c_color = val;
 }
 
 int	check_args(char **tab, t_data *data)
@@ -86,4 +89,26 @@ int	check_args(char **tab, t_data *data)
 	i = convert_trgb(0, ft_atoi(tab[0]), ft_atoi(tab[1]), ft_atoi(tab[2]));
 	free_split(tab);
 	return (i);
+}
+
+int	is_data_full(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	if (data->c_color != -1)
+		i++;
+	if (data->f_color != -1)
+		i++;
+	if (data->texture[0].path)
+		i++;
+	if (data->texture[1].path)
+		i++;
+	if (data->texture[2].path)
+		i++;
+	if (data->texture[3].path)
+		i++;
+	if (i == 6)
+		return (1);
+	return (0);
 }

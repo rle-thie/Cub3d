@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:38:07 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/12 23:22:01 by ldevy            ###   ########.fr       */
+/*   Updated: 2022/12/13 19:05:18 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	**ft_split(char const *s, char c);
 char	*ft_strtrim(char const *s1, char const *set, t_data *data);
 int		ft_atoi(const char *nptr);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 // mlx utils
 int		convert_trgb(int t, int r, int g, int b);
 

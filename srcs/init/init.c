@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:43:15 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/07 12:13:28 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/13 15:38:07 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ void	initialise_struct(t_data *data)
 
 t_data	*init(char *filename)
 {
-	t_data *data;
+	t_data	*data;
 
 	data = init_data();
 	initialise_struct(data);
@@ -147,9 +147,10 @@ t_data	*init(char *filename)
 	data->width = 1200;
 	data->move_speed = 0.06;
 	data->rotate_speed = 0.06;
-	data->c_color = 0;
-	data->f_color = 0;
+	data->c_color = -1;
+	data->f_color = -1;
 	data->filename = ft_strdup(filename, data);
+	data->head_map = NULL;
 	// printf("%s\n", data->filename);
 	return (data);
 }
