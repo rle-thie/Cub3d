@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 18:58:41 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/12 20:11:29 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/14 23:50:14 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,21 @@ void	update_position(t_data *data)
 		rotate_right(data);
 }
 
+void	make_img(t_data *data, int x)
+{
+	ray_dir(data, x);
+	render_steps(data);
+	wall_pos(data);
+	render_height_screen(data);
+}
 
+void	draw_img(t_data *data, int x)
+{
+	put_ceiling(data, x);
+	calc_color(data);
+	draw_texture(data, x);
+	put_floor(data, x);
+}
 
 void	render_ray(t_data *data)
 {
@@ -108,19 +122,13 @@ void	render_ray(t_data *data)
 	x = 0;
 	while (x < data->width)
 	{
-		ray_dir(data, x);
-		render_steps(data);
-		wall_pos(data);
-		render_height_screen(data);
-		put_ceiling(data, x);
-		calc_color(data);
-		draw_texture(data, x);
-		put_floor(data, x);
+		make_img(data, x);
+		draw_img(data, x);
 		x++;
 	}
 }
 
-int	calcul_image(t_data *data)
+int	game(t_data *data)
 {
 	update_position(data);
 	if (data->player->change)
@@ -136,7 +144,7 @@ void	ray_casting(t_data *data)
 {
 	init_game(data);
 	mlx_hook(data->mlx->win, 2, 1, &key_event, data);
-	mlx_loop_hook(data->mlx->ptr, &calcul_image, data);
+	mlx_loop_hook(data->mlx->ptr, &game, data);
 	mlx_hook(data->mlx->win, 17, 17, &ft_exit_esc, data);
 	mlx_hook(data->mlx->win, 3, 10, &restore_key, data);
 	
