@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 20:20:17 by ldevy             #+#    #+#             */
-/*   Updated: 2022/12/13 19:29:27 by ldevy            ###   ########.fr       */
+/*   Updated: 2022/12/14 17:15:29 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ int	check_args(char **tab, t_data *data)
 	i = 0;
 	while (tab[i])
 	{
-		if (ft_atoi(tab[i]) > 255 || ft_atoi(tab[i]) < 0)
+		if (ft_atoi(tab[i]) > 255 || ft_atoi(tab[i]) < 0
+			|| tab[i][0] == '\n' || tab[i][0] == ' ')
 			break ;
 		i++;
 	}

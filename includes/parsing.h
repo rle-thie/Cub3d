@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:43:37 by ldevy             #+#    #+#             */
-/*   Updated: 2022/12/13 22:22:06 by ldevy            ###   ########.fr       */
+/*   Updated: 2022/12/14 16:38:14 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,14 @@ void	struct_to_char(t_data *data, int size);
 int		map_check_char(char **map);
 int		map_check_char(char **map);
 int		last_check(t_data *data);
+int		map_check_char(char **map);
+int		map_check_char_p2(char **map);
+int		last_check(t_data *data);
+int		map_validation(char **map);
+int		map_coords_check(int i, int j, char **map, char c);
+int		map_nb_ck(char **map, int i, int j);
+int		can_check(char **map, int i, size_t j);
+
 //gnl
 char	*get_next_line(int fd, t_data *data);
 

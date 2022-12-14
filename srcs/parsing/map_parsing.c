@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 15:14:55 by ldevy             #+#    #+#             */
-/*   Updated: 2022/12/13 21:41:55 by ldevy            ###   ########.fr       */
+/*   Updated: 2022/12/14 18:14:53 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,14 @@ void	map_mode(char *line, t_data *data, int file)
 	i = 0;
 	if (ft_strlen(line) != 1 || line[0] != '\n')
 		err_handling(data, file, 3);
+	line = get_next_line(file, data);
+	if (line && line[0] == '\n')
+		err_handling(data, file, 3);
 	while (line)
 	{
-		line = get_next_line(file, data);
 		if (line)
 			make_node(line, data);
+		line = get_next_line(file, data);
 		i++;
 	}
 	struct_to_char(data, i);

@@ -86,7 +86,7 @@ void	data_fill(t_data *data, char **line, int index)
 {
 	char	*txt_path;
 
-	if (!line[1])
+	if (line[1] && line[1][0] == '\n')
 	{
 		free_split(line);
 		err_handling(data, 0, 2);
