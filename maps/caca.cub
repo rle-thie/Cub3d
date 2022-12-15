@@ -1,7 +1,7 @@
-NO ./assets/greystone.xpm
-SO ./assets/redbrick.xpm
-WE ./assets/mossy.xpm
-EA ./assets/eagle.xpm
+NO ./assets/brick.xpm
+SO ./assets/espace.xpm
+WE ./assets/grass.xpm
+EA ./assets/cobble.xpm
 F 142,95,39
 C 15,99,153
 
