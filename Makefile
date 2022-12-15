@@ -6,7 +6,7 @@
 #    By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 22:32:51 by rle-thie          #+#    #+#              #
-#    Updated: 2022/12/15 15:50:06 by rle-thie         ###   ########.fr        #
+#    Updated: 2022/12/15 16:02:25 by rle-thie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCS_GNL = $(addprefix srcs/gnl/, ft_get_next_line.c)
 SRCS_PARSING = $(addprefix srcs/parsing/, parsing_one.c utils.c map_parsing.c map_validation.c map_coords_check.c\
 					utils_two.c parsing_add_player.c)
 
-SRCS_INITS = $(addprefix srcs/init/, init.c gc.c gc_utils.c)
+SRCS_INITS = $(addprefix srcs/init/, init.c gc.c gc_utils.c init_utils.c)
 
 SRCS_GAME = $(addprefix srcs/game/, ray_casting.c raycastin_utils.c draw.c move.c move_utils.c find_delta.c init_key.c)
 
