@@ -6,11 +6,11 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:49:28 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/28 18:52:46 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/15 16:07:06 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../includes/cub3d.h"
+#include "../../includes/cub3d.h"
 
 void	ft_free_garb(t_garbage *garb)
 {
@@ -61,7 +61,6 @@ void	remove_garb(void *ptr, t_data *data)
 
 void	free_all(t_data *data)
 {
-	// close(data->in_fd);
 	ft_free_garb(data->garb);
 	free(data);
 }

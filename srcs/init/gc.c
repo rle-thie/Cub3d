@@ -6,11 +6,11 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:47:45 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/11/27 00:49:36 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/15 16:05:54 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../includes/cub3d.h"
+#include "../../includes/cub3d.h"
 
 void	ft_garb_addback(t_data *data, t_garbage *new)
 {
