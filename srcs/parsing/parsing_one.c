@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:45:46 by ldevy             #+#    #+#             */
-/*   Updated: 2022/12/15 13:43:52 by ldevy            ###   ########.fr       */
+/*   Updated: 2022/12/15 14:51:22 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,16 @@ void	data_fill(t_data *data, char **line, int index, int file)
 	}
 	txt_path = ft_strdup(line[1], data);
 	txt_path = ft_strtrim(txt_path, "\n", data);
-	ext_xpm_check(txt_path, data, file);
 	if (index < 5)
+	{
+		if (!ext_xpm_check(txt_path))
+		{
+			free_split(line);
+			close(file);
+			err_handling(data, 0, 1);
+		}
 		data->texture[index - 1].path = txt_path;
+	}
 	else
 		convert_to_rgb(data, line, index, file);
 }

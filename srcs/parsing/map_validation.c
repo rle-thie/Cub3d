@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 21:43:01 by ldevy             #+#    #+#             */
-/*   Updated: 2022/12/15 11:22:48 by ldevy            ###   ########.fr       */
+/*   Updated: 2022/12/15 14:39:51 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,6 @@ int	map_validation(char **map)
 		{
 			if (map_coords_check(i, j, map, map[i][j]))
 			{
-				printf("i : %d j : %d char : %c\n", i, j, map[i][j]);
 				return (1);
 			}
 			j++;

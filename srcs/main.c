@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:31:42 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/14 18:28:49 by ldevy            ###   ########.fr       */
+/*   Updated: 2022/12/15 14:35:57 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	debug_fct(t_data *data)
 	printf("texture NO : %s\n", data->texture[0].path);
 	printf("texture SO : %s\n", data->texture[1].path);
 	printf("texture WE : %s\n", data->texture[2].path);
-	printf("texture EA : \'%p\'\n", data->texture[3].path);
+	printf("texture EA : %s\n", data->texture[3].path);
 	printf("color C : %d\n", data->c_color);
 	printf("color C expected : %d\n", convert_trgb(0, 15, 99, 153));
 	printf("color F : %d\n", data->f_color);
