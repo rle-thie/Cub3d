@@ -1,7 +1,7 @@
 NO ./assets/greystone.xpm
 SO ./assets/redbrick.xpm
 WE ./assets/mossy.xpm
-EA 
+EA ./assets/mossy.xpm 
 F 142,95,39
 C 15,99,153
 

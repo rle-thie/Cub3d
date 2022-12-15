@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:45:46 by ldevy             #+#    #+#             */
-/*   Updated: 2022/12/15 11:32:01 by ldevy            ###   ########.fr       */
+/*   Updated: 2022/12/15 13:43:52 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	parsing(t_data *data)
 	{
 		line = get_next_line(file, data);
 		if (!is_data_full(data))
-			data_mode(line, data);
+			data_mode(line, data, file);
 		else
 		{
 			map_mode(line, data, file);
@@ -69,7 +69,7 @@ int	is_valid_id(char *id)
 	return (0);
 }
 
-void	data_mode(char *line, t_data *data)
+void	data_mode(char *line, t_data *data, int file)
 {
 	char	**line_split;
 
@@ -77,24 +77,26 @@ void	data_mode(char *line, t_data *data)
 	if (line_split)
 	{
 		if (is_valid_id(line_split[0]))
-			data_fill(data, line_split, is_valid_id(line_split[0]));
+			data_fill(data, line_split, is_valid_id(line_split[0]), file);
 		free_split(line_split);
 	}
 }
 
-void	data_fill(t_data *data, char **line, int index)
+void	data_fill(t_data *data, char **line, int index, int file)
 {
 	char	*txt_path;
 
 	if (line[1] && line[1][0] == '\n')
 	{
 		free_split(line);
+		close(file);
 		err_handling(data, 0, 2);
 	}
 	txt_path = ft_strdup(line[1], data);
 	txt_path = ft_strtrim(txt_path, "\n", data);
+	ext_xpm_check(txt_path, data, file);
 	if (index < 5)
 		data->texture[index - 1].path = txt_path;
 	else
-		convert_to_rgb(data, line, index);
+		convert_to_rgb(data, line, index, file);
 }

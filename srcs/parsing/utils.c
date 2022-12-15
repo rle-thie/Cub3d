@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 20:20:17 by ldevy             #+#    #+#             */
-/*   Updated: 2022/12/14 17:15:29 by ldevy            ###   ########.fr       */
+/*   Updated: 2022/12/15 13:43:28 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	free_split(char **ptr)
 		free(ptr);
 }
 
-void	convert_to_rgb(t_data *data, char **line, int index)
+void	convert_to_rgb(t_data *data, char **line, int index, int file)
 {
 	char	**nbrs;
 	int		val;
@@ -57,13 +57,17 @@ void	convert_to_rgb(t_data *data, char **line, int index)
 	if (!line[1])
 	{
 		free_split(line);
+		close(file);
 		err_handling(data, 0, 2);
 	}
 	nbrs = ft_split(line[1], ',');
 	if (nbrs)
 		val = check_args(nbrs, data);
 	else
+	{
+		close(file);
 		err_handling(data, 0, 2);
+	}
 	if (index == 5)
 		data->f_color = val;
 	if (index == 6)
