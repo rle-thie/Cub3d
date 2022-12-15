@@ -6,11 +6,11 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 16:30:20 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/12 17:02:21 by ldevy            ###   ########.fr       */
+/*   Updated: 2022/12/15 11:29:26 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../includes/cub3d.h"
+#include "../../includes/cub3d.h"
 
 char	*ft_strchr(const char *s, int c)
 {

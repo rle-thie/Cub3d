@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_trgb.c                                      :+:      :+:    :+:   */
+/*   convert_trgb.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 10:29:37 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/07 10:30:08 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/15 11:27:45 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../includes/cub3d.h"
+#include "../../includes/cub3d.h"
 
 int	convert_trgb(int t, int r, int g, int b)
 {

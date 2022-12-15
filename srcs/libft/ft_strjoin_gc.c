@@ -6,7 +6,7 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 03:28:25 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/12 17:04:22 by ldevy            ###   ########.fr       */
+/*   Updated: 2022/12/15 11:30:28 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ char	*ft_strjoinchar_gc(char *s1, char s2, t_data *data)
 		tab[i++] = s1[y++];
 	tab[i] = s2;
 	i++;
-	// tab[i] = '\0';
 	ft_free(s1, data);
 	return (tab);
 }
-// void ft_charjoin_gc(char *s1, char c, t_data *data)

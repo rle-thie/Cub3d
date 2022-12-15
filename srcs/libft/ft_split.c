@@ -6,11 +6,11 @@
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 17:37:03 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/12 19:23:09 by ldevy            ###   ########.fr       */
+/*   Updated: 2022/12/15 11:31:06 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../includes/cub3d.h"
+#include "../../includes/cub3d.h"
 
 static void	ft_free_double(char **strs)
 {
