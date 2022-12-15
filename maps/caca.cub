@@ -1,13 +1,13 @@
-NO ./assets/east_test_resize.xpm
-SO ./assets/east_test_resize.xpm
-WE ./assets/east_test_resize.xpm
-EA ./assets/east_test_resize.xpm
+NO ./assets/grass.xpm
+SO ./assets/cobble.xpm
+WE ./assets/espace.xpm
+EA ./assets/brick.xpm
 F 142,95,39
 C 15,99,153
 
         1111111111111111111111111 111111
         1000000000110000000000001 100101
-        1011000001110000000000001 101001
+        101100000111000000000S001 101001
         1001000000000000000000001 110001      
 111111111011000001110000000000001 111111
 100000000011000001110111111111111
