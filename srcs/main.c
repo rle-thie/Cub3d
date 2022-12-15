@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:31:42 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/08 17:08:16 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/15 15:41:10 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,29 @@ int	ft_free_exit(char *msg, int value, t_data *data)
 	exit(value);
 }
 
+void	debug_fct(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	printf("texture NO : %s\n", data->texture[0].path);
+	printf("texture SO : %s\n", data->texture[1].path);
+	printf("texture WE : %s\n", data->texture[2].path);
+	printf("texture EA : %s\n", data->texture[3].path);
+	printf("color C : %d\n", data->c_color);
+	printf("color C expected : %d\n", convert_trgb(0, 15, 99, 153));
+	printf("color F : %d\n", data->f_color);
+	printf("color F expected : \'%d\'\n", convert_trgb(0, 142, 95, 39));
+	if (data->map)
+	{
+		while (data->map[i])
+		{
+			printf("%s", data->map[i]);
+			i++;
+		}
+	}
+}
+
 int	main(int ac, char **av, char **env)
 {
 	t_data	*data;
@@ -73,6 +96,8 @@ int	main(int ac, char **av, char **env)
 		return (0);
 	}
 	data = init(av[1]);
+	parsing(data);
+	debug_fct(data);
 	// if (!parsing())
 		// ft_free_exit("Error\nParsing error", 1, data)
 	ray_casting(data);

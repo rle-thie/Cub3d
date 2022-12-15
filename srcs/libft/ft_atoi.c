@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/27 00:56:40 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/12 21:53:27 by ldevy            ###   ########.fr       */
+/*   Created: 2021/11/23 11:03:01 by rle-thie          #+#    #+#             */
+/*   Updated: 2022/12/12 23:21:28 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_atoi(const char *nptr)
 {
+	size_t	sign;
+	size_t	result;
 	size_t	i;
 
+	result = 0;
+	sign = 1;
 	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
+	{
 		i++;
-	return (i);
+	}
+	if (nptr[i] == '+' || nptr[i] == '-')
+	{
+		if (nptr[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (nptr[i] >= 48 && nptr[i] <= 57)
+	{
+		result = result * 10 + nptr[i] - '0';
+		i++;
+	}
+	return (result * sign);
 }

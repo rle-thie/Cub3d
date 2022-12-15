@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:38:45 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/02 22:16:44 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/13 20:24:06 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,34 @@
 typedef struct s_data			t_data;
 typedef struct s_garbage		t_garbage;
 typedef struct s_mlx			t_mlx;
-typedef	struct s_key			t_key;
+typedef struct s_key			t_key;
 typedef struct s_player			t_player;
 typedef struct s_raytracing		t_raytracing;
 typedef struct s_texture		t_texture;
+typedef struct s_map_node		t_map_node;
 
+struct s_map_node
+{
+	struct s_map_node	*next;
+	struct s_map_node	*prev;
+	char				*str;
+};
 struct	s_data
 {
-	t_texture	*texture;
-	t_garbage	*garb;
-	char		*filename;
-	t_mlx		*mlx;
-	int			width;
-	int			height;
-	int			c_color;
-	int			f_color;
-	t_key		*key;
-	t_player	*player;
-	float		move_speed;
-	float		rotate_speed;
+	t_texture		*texture;
+	t_garbage		*garb;
+	char			*filename;
+	t_mlx			*mlx;
+	int				width;
+	int				height;
+	int				c_color;
+	int				f_color;
+	t_key			*key;
+	t_player		*player;
+	float			move_speed;
+	float			rotate_speed;
 	t_raytracing	*raytracing;
+	t_map_node		*head_map;
 	char			**map;
 };
 
