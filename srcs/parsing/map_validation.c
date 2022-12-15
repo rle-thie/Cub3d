@@ -6,7 +6,7 @@
 /*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 21:43:01 by ldevy             #+#    #+#             */
-/*   Updated: 2022/12/15 14:53:47 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/15 15:08:57 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,6 @@ int	map_validation(char **map)
 		{
 			if (map_coords_check(i, j, map, map[i][j]))
 			{
-				printf("i : %d j : %d char : %c\n", i, j, map[i][j]);
 				return (1);
 			}
 			j++;
