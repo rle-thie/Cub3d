@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:31:42 by rle-thie          #+#    #+#             */
+<<<<<<< HEAD
+/*   Updated: 2022/12/15 15:12:38 by rle-thie         ###   ########.fr       */
+=======
 /*   Updated: 2022/12/15 15:41:10 by ldevy            ###   ########.fr       */
+>>>>>>> 7774a71358e26c76547f998d71a484983bfad7df
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +101,7 @@ int	main(int ac, char **av, char **env)
 	}
 	data = init(av[1]);
 	parsing(data);
-	debug_fct(data);
+	// debug_fct(data);
 	// if (!parsing())
 		// ft_free_exit("Error\nParsing error", 1, data)
 	ray_casting(data);

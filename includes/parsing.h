@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:43:37 by ldevy             #+#    #+#             */
-/*   Updated: 2022/12/15 15:04:57 by ldevy            ###   ########.fr       */
+/*   Updated: 2022/12/15 15:08:42 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,17 @@ int		add_back_env(t_map_node *new, t_data *data);
 void	struct_to_char(t_data *data, int size);
 
 //map validation
-int		map_check_char(char **map);
-int		map_check_char(char **map);
 int		last_check(t_data *data);
-int		map_check_char(char **map);
-int		map_check_char_p2(char **map);
+int		map_check_char(char **map, t_data *data);
+int		map_check_char_p2(char **map, t_data *data);
 int		last_check(t_data *data);
 int		map_validation(char **map);
 int		map_coords_check(int i, int j, char **map, char c);
 int		map_nb_ck(char **map, int i, int j);
 int		can_check(char **map, int i, size_t j);
+
+// player
+void	add_player(t_data *data, int x, int y, char c);
 
 //gnl
 char	*get_next_line(int fd, t_data *data);
