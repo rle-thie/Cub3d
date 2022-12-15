@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 19:25:17 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/15 15:47:41 by rle-thie         ###   ########.fr       */
+/*   Updated: 2022/12/15 16:13:04 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ void	mlx_init_textures(t_data *data);
 void	init_game(t_data *data);
 
 // key
-int	key_event(int key_pressed, t_data *data);
-int	restore_key(int key_pressed, t_data *data);
+int		key_event(int key_pressed, t_data *data);
+int		restore_key(int key_pressed, t_data *data);
 void	update_position(t_data *data);
 
 // exit fonction
-int	ft_exit_esc(t_data *data);
+int		ft_exit_esc(t_data *data);
 
 #endif

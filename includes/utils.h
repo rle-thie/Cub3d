@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/15 16:13:54 by ldevy             #+#    #+#             */
+/*   Updated: 2022/12/15 16:14:01 by ldevy            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef UTILS_H
 # define UTILS_H
@@ -20,10 +31,10 @@ void		ft_exit_message(char *msg, t_data *data, int value);
 int			ft_free_exit(char *msg, int value, t_data *data);
 
 // init null
-void	init_player(t_data *data);
-void	init_raytracing_utils(t_data *data);
-void	init_raytracing(t_data *data);
-void	init_texture(t_data *data);
-void	initialise_struct(t_data *data);
+void		init_player(t_data *data);
+void		init_raytracing_utils(t_data *data);
+void		init_raytracing(t_data *data);
+void		init_texture(t_data *data);
+void		initialise_struct(t_data *data);
 
 #endif
