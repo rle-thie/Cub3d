@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_validation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rle-thie <rle-thie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 21:43:01 by ldevy             #+#    #+#             */
-/*   Updated: 2022/12/15 11:22:48 by ldevy            ###   ########.fr       */
+/*   Updated: 2022/12/15 14:53:47 by rle-thie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	err(t_data *data, int mode)
 	exit(EXIT_FAILURE);
 }
 
-int	map_check_char(char **map)
+int	map_check_char(char **map, t_data *data)
 {
 	int	i;
 	int	j;
@@ -44,10 +44,10 @@ int	map_check_char(char **map)
 		}
 		i++;
 	}
-	return (map_check_char_p2(map));
+	return (map_check_char_p2(map, data));
 }
 
-int	map_check_char_p2(char **map)
+int	map_check_char_p2(char **map, t_data *data)
 {
 	int	i;
 	int	j;
@@ -62,7 +62,10 @@ int	map_check_char_p2(char **map)
 		{
 			if (map[i][j] == 'N' || map[i][j] == 'S' || map[i][j] == 'E'
 			|| map[i][j] == 'W')
+			{
+				add_player(data, i, j, map[i][j]);
 				lettre++;
+			}
 			j++;
 		}
 		i++;
@@ -76,7 +79,7 @@ int	last_check(t_data *data)
 {
 	if (!is_data_full(data))
 		err(data, 3);
-	if (map_check_char(data->map))
+	if (map_check_char(data->map, data))
 		err(data, 1);
 	if (map_validation(data->map))
 		err(data, 2);
