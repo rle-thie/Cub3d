@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   utils_two.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldevy <ldevy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/27 00:56:40 by rle-thie          #+#    #+#             */
-/*   Updated: 2022/12/12 21:53:27 by ldevy            ###   ########.fr       */
+/*   Created: 2022/12/15 12:05:53 by ldevy             #+#    #+#             */
+/*   Updated: 2022/12/15 14:19:46 by ldevy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-size_t	ft_strlen(const char *str)
+int	ext_xpm_check(char *str, t_data *data, int file)
 {
-	size_t	i;
+	char	*ext;
+	int		size;
 
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-		i++;
-	return (i);
+	size = ft_strlen(str);
+	if (size <= 4)
+	{
+		close(file);
+		err_handling(data, 0, 1);
+	}
+	ext = &(str[size - 4]);
+	if (ft_strncmp(ext, ".xpm", 4))
+	{
+		close(file);
+		err_handling(data, 0, 1);
+	}
+	return (1);
 }
+
+//mettre les chagements de fct prot dans les includes
