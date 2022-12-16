@@ -32,7 +32,7 @@ void	set_plane(t_data *data, char c)
 	else if (c == 'W')
 	{
 		data->player->dir_y = -1;
-		data->raytracing->plane_y = -0.66;
+		data->raytracing->plane_x = -0.66;
 	}
 }
 
