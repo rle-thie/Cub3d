@@ -1,6 +1,6 @@
 # Cub3d
 
-Ce projet vise à recréer le célèbre jeu Wolfenstein 3D en utilisant une technique appelée ray casting. Dans cette reproduction, nous nous efforçons de capturer l'essence et l'expérience du jeu original en utilisant des graphismes basés sur des calculs de rayons.
+Ce projet vise à recréeren C le célèbre jeu Wolfenstein 3D en utilisant une technique appelée ray casting. Dans cette reproduction, nous nous efforçons de capturer l'essence et l'expérience du jeu original en utilisant des graphismes basés sur des calculs de rayons.
 
 ## Qu'est-ce que le ray casting ?
 
